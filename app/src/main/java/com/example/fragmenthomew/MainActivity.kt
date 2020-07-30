@@ -7,9 +7,8 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity(), FragmentL {
 
-    private var btnAdd: Button?=null
-
     private var removeFragments = RemoveFragments()
+    private var btnAdd: Button?=null 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
