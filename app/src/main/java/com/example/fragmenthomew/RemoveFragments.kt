@@ -25,7 +25,6 @@ class RemoveFragments: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.remove_fragments, container, false)
-
         return view
     }
 
@@ -37,8 +36,5 @@ class RemoveFragments: Fragment() {
         btnRemove?.setOnClickListener {
             list?.forRemove()
         }
-
     }
-
-
 }

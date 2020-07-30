@@ -9,16 +9,22 @@ class MainActivity : AppCompatActivity(), FragmentL {
 
     private var btnAdd: Button?=null
 
-    private var replaceFragments = ReplaceFragments()
+    private var removeFragments = RemoveFragments()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnAdd=findViewById(R.id.btnAdd)
+        viewId()
+        onClick()
         forAdd()
+    }
 
+    private fun viewId() {
+        btnAdd=findViewById(R.id.btnAdd)
+    }
 
+    private fun onClick() {
         btnAdd?.setOnClickListener {
             supportFragmentManager
                     .beginTransaction()
@@ -30,16 +36,14 @@ class MainActivity : AppCompatActivity(), FragmentL {
     override fun forAdd() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentInActivity, replaceFragments)
+                .replace(R.id.fragmentInActivity, removeFragments)
                 .commit()
     }
 
     override fun forRemove() {
         supportFragmentManager
                 .beginTransaction()
-                .remove(replaceFragments )
+                .remove(removeFragments)
                 .commit()
     }
-
-
 }
